@@ -450,6 +450,10 @@
     .table { padding: 18px 14px 22px; border-width: 6px; }
     .chip-btn { width: 58px; height: 58px; }
   }
+  @media (prefers-reduced-motion: reduce) {
+    .shoe-reshuffling, .cards img { animation: none !important; transition: none !important; }
+    .cards img:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
