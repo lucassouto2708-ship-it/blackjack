@@ -458,14 +458,14 @@
 </head>
 <body>
 
-<h1>🃏 Blackjack</h1>
+<h1>Blackjack</h1>
 <div class="subtitle">Casino Royale Table</div>
 
 <div class="hud">
   <div class="hud-card bankroll-card">
     <div>
       <div class="bankroll-label">Banca</div>
-      <div class="bankroll-value">💰 <span id="bankroll">1000</span></div>
+      <div class="bankroll-value"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M16 13h2"/><path d="M6 6V5a2 2 0 0 1 2-2h10"/></svg> <span id="bankroll">1000</span></div>
     </div>
     <div class="chip-stack-display" id="chip-stack-display"></div>
   </div>
@@ -493,7 +493,7 @@
 
   <div id="betting-panel" class="betting-panel">
     <div class="betting-panel-title">Faça sua aposta</div>
-    <div class="bet-amount">💵 <span id="current-bet">0</span></div>
+    <div class="bet-amount"><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg> <span id="current-bet">0</span></div>
     <div class="chip-row">
       <button class="chip-btn" data-chip="10"><span>10</span></button>
       <button class="chip-btn" data-chip="25"><span>25</span></button>
@@ -1087,7 +1087,7 @@ function finishRound() {
         totalDelta += hand.bet;
         anyPush = true;
       } else {
-        hand.result = 'Blackjack! 🎉';
+        hand.result = 'Blackjack!';
         totalDelta += hand.bet * 2.5;
         anyWin = true;
       }
@@ -1121,7 +1121,7 @@ function finishRound() {
   if (anyLoss) stats.losses++;
   if (anyPush && !anyWin && !anyLoss) stats.pushes++;
 
-  const anyRealBlackjack = hands.some(h => h.status === 'blackjack' && h.result === 'Blackjack! 🎉');
+  const anyRealBlackjack = hands.some(h => h.status === 'blackjack' && h.result === 'Blackjack!');
   if (anyRealBlackjack) Sound.blackjack();
   else if (anyWin) Sound.win();
   else if (anyLoss) Sound.lose();
